@@ -1,0 +1,6 @@
+C:\Users\PICHAU\source\repos\Domain\bin\Debug\Domain.dll
+C:\Users\PICHAU\source\repos\Domain\bin\Debug\Domain.pdb
+C:\Users\PICHAU\source\repos\Domain\obj\Debug\Domain.csprojAssemblyReference.cache
+C:\Users\PICHAU\source\repos\Domain\obj\Debug\Domain.csproj.CoreCompileInputs.cache
+C:\Users\PICHAU\source\repos\Domain\obj\Debug\Domain.dll
+C:\Users\PICHAU\source\repos\Domain\obj\Debug\Domain.pdb

@@ -249,14 +249,17 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Business\Business.csproj">
-      <Project>{D63C6DBC-7AD3-450C-99A3-9A8FE57C171F}</Project>
+    <ProjectReference Include="Business\Business.csproj">
+      <Project>{d63c6dbc-7ad3-450c-99a3-9a8fe57c171f}</Project>
       <Name>Business</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Domain\Domain.csproj">
-      <Project>{5AFE4501-733E-4532-AD1C-456490AF25EE}</Project>
+    <ProjectReference Include="Domain\Domain.csproj">
+      <Project>{5afe4501-733e-4532-ad1c-456490af25ee}</Project>
       <Name>Domain</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
