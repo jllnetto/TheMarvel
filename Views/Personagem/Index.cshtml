@@ -1,0 +1,70 @@
+﻿<br />
+<br />
+<div class="row mb-4">
+    <div class="col-lg-12">
+        <a href="@Url.Action("Paralelo","Personagem")" id="parelelo" class="btn btn-secondary">Paralelo</a>
+        <a href="@Url.Action("Sequencial","Personagem")" id="sequencial" class="btn btn-primary ">Sequencial</a>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="row">
+            <!-- Elemento personagem -->
+            @foreach (var personagem in Model)
+            {
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100">
+                        <a href="#"><img class="card-img-top" src="@personagem.Pic_url" alt="@personagem.Nome"></a>
+                        <div class="card-body">
+                            <h4 class="card-title">
+                                <a href="@personagem.Wiki_url" target="_blank">@personagem.Nome</a>
+                            </h4>
+                            <p class="card-text">@personagem.Descricao</p>
+                        </div>
+                        <div class="card-footer">
+                            <!-- Botão listar comics -->
+                            <a href="/Comic/Index/?id_personagem=@personagem.Id_marvel&limit=21&offset=0" type="button" class="btn btn-primary btn-sm" title="Comics"><i class="far fa-newspaper"></i></a>
+                            <!-- Botão salvar personagem -->
+                            <a href="/Personagem/SalvarPersonagem/?id_personagem_marvel=@personagem.Id_marvel" type="button" class="btn btn-primary btn-sm" title="Salvar localmente"><i class="fas fa-download"></i></a>
+                        </div>
+                    </div>
+                </div>
+            }
+            <!-- /Elemento personagem -->
+            <!-- Paginador -->
+            @if (ViewBag.total > ViewBag.limit)
+            {
+                int offset = ViewBag.offset;
+                int limit = ViewBag.limit;
+                int atual = 0;
+                int retorna = offset - limit;
+                int avanca = offset + limit;
+                int num;
+
+                <div class="paginator">
+                    <a href="/Personagem/Index/?limit=@ViewBag.limit&offset=@retorna ">&laquo;</a>
+                    @for (int i = 0; i < Convert.ToInt32(ViewBag.paginator); i++)
+                    {
+                        { num = i + 1; }
+                        if (atual != offset)
+                        {
+
+                            <a href="/Personagem/Index/?limit=@ViewBag.limit&offset=@atual ">@num</a>
+                        }
+                        else
+                        {
+                            <a class="active" href="/Personagem/Index/?limit=@ViewBag.limit&offset=@atual ">@num</a>
+                        }
+                        { atual += limit; }
+
+                    }
+                    <a href="/Personagem/Index/?limit=@ViewBag.limit&offset=@avanca ">&raquo;</a>
+                </div>
+            }
+            <!-- /Paginador -->
+        </div>
+    </div>
+</div>
+
+
+
